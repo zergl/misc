@@ -14,6 +14,9 @@ def enum(args, start=0):
             for idx, key in enumerate(_Enum.__slots__, start):
                 setattr(self, key, idx)
         
+        def __str__(self):
+            return "An enum-like wrapper."
+
         def __iter__(self):
             return iter(self.__slots__)
 
