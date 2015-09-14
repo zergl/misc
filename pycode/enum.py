@@ -18,7 +18,7 @@ def enum(args, start=0):
                 setattr(self, key, idx)
                 self.__item_str[idx] = key
         
-        def __str__(self, key):
+        def __str__(self):
             return "An Enum-like Wrapper."
 
         def __iter__(self):
