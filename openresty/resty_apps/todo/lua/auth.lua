@@ -1,0 +1,1 @@
+ngx.say("auth succ.")

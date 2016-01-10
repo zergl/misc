@@ -1,0 +1,42 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--
+<script src="./js/m.js" type="text/javascript"></script>
+-->
+<script type="text/javascript">
+    function do_request(method, url, params) {
+        var temp = document.createElement("form");
+        temp.name = temp.di = "myform";
+        temp.action = url;
+        temp.method = method;
+        temp.style.display = "none";
+
+        for (var x in params) {
+            var el = document.createElement("input");
+            el.name = x;
+            el.id = x;
+            el.value = params[x];
+            temp.appendChild(el)
+        }
+        console.log(temp);
+        document.body.appendChild(temp);    
+        temp.submit();
+    }
+</script>
+</head>
+
+<body>
+    <h1>hello world! @todo.io</h1>
+    
+    <script type="text/javascript">
+        var params = new Array();
+        params["cmd"]       = "print_info";
+        params["title"]     = "hello world!";
+        params["author"]    = "zergl";
+        params["content"]   = "adjakdjkafkaj;ldakdaddd";
+        var resp = do_request("GET", "http://todo.io/apis/aaaaaa", params)
+        //alert("resp: " + resp);
+    </script>
+</body>
+</html>
