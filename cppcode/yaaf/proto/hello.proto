@@ -1,0 +1,9 @@
+package helloworld;
+
+message DataPkg
+{
+	required string type_	= 1;
+	required bytes data_	= 2;
+};
+
+
