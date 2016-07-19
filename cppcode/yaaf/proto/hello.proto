@@ -1,5 +1,15 @@
 package helloworld;
 
+message  HeartbeatSync
+{
+	required uint32 seq_ = 1;
+};
+
+message  HeartbeatAck
+{
+	required uint32 seq_ = 1;
+};
+
 message DataPkg
 {
 	required string type_	= 1;

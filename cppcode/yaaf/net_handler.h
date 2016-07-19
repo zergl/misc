@@ -24,12 +24,14 @@ public:
     }
 
 public:
-    int add_handle(socket_t &s);
+    int add_handle(socket_t &s, bool oneshot = false);
     int del_handle(socket_t &s);
     int run_loop(const uint32_t timeout_ms = 100);
-    int Serve(const std::string &svc_ip, 
-		const uint16_t svc_port, 
-		const uint32_t timeout_ms = 100);
+    int Serve(const std::string &svc_ip = "127.0.0.1", 
+		const uint16_t svc_port = 8514, 
+		const uint32_t timeout_ms = 100,
+		int backlog = 64
+	);
 
 private:
 	int do_read(const socket_t &s);
